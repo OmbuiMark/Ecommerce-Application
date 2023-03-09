@@ -3,7 +3,9 @@ package com.example.e_commerce
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock.sleep
 import com.example.e_commerce.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -14,9 +16,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        binding.btnLogin.setOnClickListener {
-
-            val intent = Intent(this, LoginActivity::class.java)
+        binding.hamburgericon.setOnClickListener {
+        val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

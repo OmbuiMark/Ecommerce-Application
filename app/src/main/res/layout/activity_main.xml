@@ -1,56 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <!-- Top bar with hamburger icon and app logo -->
     <LinearLayout
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:padding="16dp"/>
+        <!-- Hamburger icon -->
+        <ImageView
+            android:id="@+id/hamburgericon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/dashboardicon"
+            android:clickable="true"
+            android:focusable="true" />
 
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:padding="16dp"/>
-
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:padding="16dp"/>
-
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="JustMove"
-            android:padding="16dp"/>
-
-        <TextView
-            android:id="@+id/tv_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account? Sign up"
-            android:textSize="16sp"
-            android:gravity="center"
-            android:padding="16dp"/>
 
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Cart button on top right -->
+    <ImageView
+        android:id="@+id/cart_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/cart_icon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"/>
+
+</RelativeLayout>
