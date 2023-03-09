@@ -1,5 +1,6 @@
 package com.example.e_commerce
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -31,6 +32,9 @@ class SignupActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Signup successful, display success message
                             Toast.makeText(this, "Signup successful!", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         } else {
                             // Signup failed, display error message
                             Toast.makeText(this, "Signup failed. Please try again later.", Toast.LENGTH_SHORT).show()
