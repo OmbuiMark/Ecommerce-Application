@@ -1,35 +1,27 @@
 package com.example.e_commerce
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.e_commerce.databinding.ActivityMainBinding
+import com.example.e_commerce.databinding.ActivityDrawerMenuBinding
 import com.google.android.material.navigation.NavigationView
 
-
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class DrawerMenu : AppCompatActivity() {
+    private lateinit var binding:ActivityDrawerMenuBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater) // Initialize view binding object
+        binding= ActivityDrawerMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-        binding.hamburgericon.setOnClickListener {
-            //startActivity(Intent(this, DrawerMenu::class.java))
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
 
         drawerLayout = binding.drawerLayout
         navView = binding.navigationView
+
         val toggle = ActionBarDrawerToggle(
             this,
             drawerLayout,
@@ -40,22 +32,9 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        navView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.nav_item_1 -> {
-                    startActivity(Intent(this, SignupActivity::class.java))
-                    true
-                }
-                R.id.nav_item_2 -> {
-                    startActivity(Intent(this, LoginActivity::class.java))
-                    true
-                }
-                R.id.nav_item_3 -> {
-                    startActivity(Intent(this, DrawerMenu::class.java))
-                    true
-                }
-                else -> false
-            }
+        navView.setNavigationItemSelectedListener {
+            // Handle menu item clicks
+            true
         }
     }
 
