@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="8dp">
 
         <!-- Hamburger icon -->
@@ -25,18 +25,28 @@
             android:src="@drawable/dashboardicon"
             android:clickable="true"
             android:focusable="true" />
+
         <ImageView
             android:id="@+id/cart_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/cart_icon"
             android:layout_gravity="end"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"/>
+            android:src="@drawable/cart_icon" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
 
 
     </LinearLayout>
+
+
 
 
     <!-- Cart button on top right -->
