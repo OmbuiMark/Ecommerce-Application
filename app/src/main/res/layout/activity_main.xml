@@ -51,7 +51,8 @@
                 android:layout_gravity="start|center_vertical"
                 android:src="@drawable/ic_previous"
                 android:clickable="true"
-                android:padding="16dp"/>
+                android:padding="16dp"
+                android:focusable="true" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager"
@@ -65,7 +66,8 @@
                 android:layout_gravity="end|center_vertical"
                 android:src="@drawable/ic_next"
                 android:clickable="true"
-                android:padding="16dp"/>
+                android:padding="16dp"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/imageDescription"
