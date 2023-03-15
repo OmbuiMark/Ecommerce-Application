@@ -37,10 +37,49 @@
             android:src="@drawable/cart_icon" />
 
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@color/dark_blue"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/previous"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_previous"
+                android:clickable="true"
+                android:padding="16dp"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_next"
+                android:clickable="true"
+                android:padding="16dp"/>
+
+            <TextView
+                android:id="@+id/imageDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#99000000"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:padding="8dp"/>
+
+        </FrameLayout>
+
+
 
 
 
