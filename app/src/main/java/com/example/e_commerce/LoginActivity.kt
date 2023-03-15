@@ -32,9 +32,12 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
+                            // Set user session persistence to "LOCAL"
+                            FirebaseAuth.getInstance().currentUser?.getIdToken(true)
+
                             // Login successful, navigate to main activity
                             Toast.makeText(this, "Login Succesfull.", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, DrawerMenu::class.java)
                             startActivity(intent)
                             finish()
                         } else {
