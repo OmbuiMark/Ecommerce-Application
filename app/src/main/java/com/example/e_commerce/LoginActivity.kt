@@ -17,6 +17,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater) // Initialize view binding object
         setContentView(binding.root)
 
+
+
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
         // Set click listener for the login/signup button

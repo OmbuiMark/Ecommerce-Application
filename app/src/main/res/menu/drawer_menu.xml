@@ -11,8 +11,8 @@
             android:title="Login" />
         <item
             android:id="@+id/nav_item_3"
-            android:icon="@drawable/menu_item"
-            android:title="Buy" />
+            android:icon="@drawable/ic_username"
+            android:title="Admin" />
     </group>
 
 </menu>
