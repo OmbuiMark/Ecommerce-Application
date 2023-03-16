@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             next.setOnClickListener {
-                if (viewPager.currentItem < viewPager.adapter?.itemCount ?: 0) {
+                if (viewPager.currentItem < (viewPager.adapter?.itemCount ?: 0)) {
                     viewPager.currentItem = viewPager.currentItem + 1
                 }
             }
