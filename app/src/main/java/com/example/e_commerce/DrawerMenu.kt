@@ -18,6 +18,9 @@ class DrawerMenu :AppCompatActivity() {
             SliderItem(R.drawable.discountberry),
             SliderItem(R.drawable.discountbrocoli),
             SliderItem(R.drawable.discountmeat),
+            SliderItem(R.drawable.discountmeat),
+            SliderItem(R.drawable.discountmeat),
+            SliderItem(R.drawable.discountmeat),
             // add more items as needed
         )
 
@@ -25,7 +28,27 @@ class DrawerMenu :AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = SliderAdapter(sliderItems)
 
+
+
+
+        val categoryItems = listOf(
+            CategoryItem(R.drawable.electronics, "Fruits"),
+            CategoryItem(R.drawable.electronics, "Vegetables"),
+            CategoryItem(R.drawable.electronics, "Meat"),
+            CategoryItem(R.drawable.electronics, "Meats"),
+            CategoryItem(R.drawable.electronics, "Meatss"),
+            // add more items as needed
+        )
+        val categoryRecycler = binding.categoryRecycler
+        categoryRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        categoryRecycler.adapter = CategoryAdapter(categoryItems)
+
+
+
     }
+
+
+    data class CategoryItem(val image: Int, val title: String)
 
     data class SliderItem(val image: Int)
 }
