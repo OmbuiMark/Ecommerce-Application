@@ -1,5 +1,6 @@
 package com.example.e_commerce
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,17 @@ class CategoryAdapter(private val items: List<DrawerMenu.CategoryItem>) : Recycl
         val item = items[position]
         holder.categoryImage.setImageResource(item.image)
         holder.categoryName.text = item.title
+
+        // Add a click listener for the first item
+        if (position == 0) {
+            holder.itemView.setOnClickListener {
+                // Start ElectronicsDashboardActivity
+                val intent = Intent(holder.itemView.context, ElectronicsDashboard::class.java)
+                holder.itemView.context.startActivity(intent)
+            }
+        }
     }
+
 
     override fun getItemCount() = items.size
 

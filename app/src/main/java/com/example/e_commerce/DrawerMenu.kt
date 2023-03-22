@@ -32,7 +32,7 @@ class DrawerMenu :AppCompatActivity() {
 
 
         val categoryItems = listOf(
-            CategoryItem(R.drawable.electronics, "Fruits"),
+            CategoryItem(R.drawable.electronics, "Electronics"),
             CategoryItem(R.drawable.electronics, "Vegetables"),
             CategoryItem(R.drawable.electronics, "Meat"),
             CategoryItem(R.drawable.electronics, "Meats"),
@@ -42,6 +42,8 @@ class DrawerMenu :AppCompatActivity() {
         val categoryRecycler = binding.categoryRecycler
         categoryRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         categoryRecycler.adapter = CategoryAdapter(categoryItems)
+
+
 
 
 
