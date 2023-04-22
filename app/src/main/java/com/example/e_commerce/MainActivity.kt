@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             // User is already logged in, redirect to desired activity
-            startActivity(Intent(this, DrawerMenu::class.java))
+            startActivity(Intent(this, OptionsDashboard::class.java))
             finish() // Finish the current activity to prevent user from going back to login/signup screens
         } else {
             // User is not logged in, continue with MainActivity setup
@@ -73,7 +74,8 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                     R.id.nav_item_3 -> {
-                        startActivity(Intent(this, DrawerMenu::class.java))
+                        //startActivity(Intent(this, DrawerMenu::class.java))
+                        Toast.makeText(this, "More Functionality to be added.", Toast.LENGTH_LONG).show()
                         true
                     }
                     else -> false
