@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.e_commerce.databinding.ActivityLoginBinding
+import com.example.e_commerce.DisplayDatabaseInformation
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -36,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
                             // Login successful, navigate to desired activity
                             Toast.makeText(this, "Login Successful.", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this, DrawerMenu::class.java)
+                            val intent = Intent(this, OptionsDashboard::class.java)
                             startActivity(intent)
                             finish()
                         } else {
